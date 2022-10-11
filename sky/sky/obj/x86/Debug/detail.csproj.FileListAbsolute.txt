@@ -2,3 +2,9 @@ C:\Users\Admin\Downloads\sky\sky\bin\Debug\sky.exe
 C:\Users\Admin\Downloads\sky\sky\bin\Debug\sky.pdb
 C:\Users\Admin\Downloads\sky\sky\obj\x86\Debug\sky.exe
 C:\Users\Admin\Downloads\sky\sky\obj\x86\Debug\sky.pdb
+C:\Users\Ника\Desktop\btx-fly-engenering-game\sky\sky\obj\x86\Debug\detail.csproj.AssemblyReference.cache
+C:\Users\Ника\Desktop\btx-fly-engenering-game\sky\sky\obj\x86\Debug\detail.csproj.CoreCompileInputs.cache
+C:\Users\Ника\Desktop\btx-fly-engenering-game\sky\sky\obj\x86\Debug\sky.exe
+C:\Users\Ника\Desktop\btx-fly-engenering-game\sky\sky\obj\x86\Debug\sky.pdb
+C:\Users\Ника\Desktop\btx-fly-engenering-game\sky\sky\bin\Debug\sky.exe
+C:\Users\Ника\Desktop\btx-fly-engenering-game\sky\sky\bin\Debug\sky.pdb

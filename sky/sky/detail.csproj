@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine.cs" />
+    <Compile Include="Gear.cs" />
     <Compile Include="sky.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

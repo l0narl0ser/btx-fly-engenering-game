@@ -1,29 +1,32 @@
-﻿using System;
+﻿using sky;
+using System;
 using System.Linq;
 
-public static class Search
-{
-    public static bool find<T>(this T[] motor, T detail)
-    {
-        return motor.Contains(detail);
-    }
-}
+
 
 public class Ex
 {
     public static void Main()
     {
-        int[] motor = { 1, 2, 3, 4, 5 };
-        int detail = 6;
+        
 
-        bool isThere = motor.find(detail);
-        if (isThere)
+        Gear[] gears = new Gear[5];
+        for (int i = 0; i < 5; i++)
         {
-            Console.WriteLine("Элемент найден ");
+            gears[i] = new Gear(); //создали шестеренку
+            gears[i].SetId(i.ToString());
         }
-        else
+        Random random = new Random();
+
+        foreach (Gear gear in gears)
         {
-            Console.WriteLine("Элемент не найден в массиве");
+            gear.SetEdge(random.Next()%100);
         }
-    }
+        Engine engine = new Engine(gears);
+        int summerGear = engine.SearchGear(50);
+        Console.WriteLine(summerGear);
+        Console.ReadLine();
+   }
+
 }
+
