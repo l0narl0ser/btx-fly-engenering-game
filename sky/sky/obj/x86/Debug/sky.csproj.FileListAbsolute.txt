@@ -1,0 +1,4 @@
+C:\Users\Admin\Downloads\sky\sky\bin\Debug\sky.exe
+C:\Users\Admin\Downloads\sky\sky\bin\Debug\sky.pdb
+C:\Users\Admin\Downloads\sky\sky\obj\x86\Debug\sky.exe
+C:\Users\Admin\Downloads\sky\sky\obj\x86\Debug\sky.pdb
