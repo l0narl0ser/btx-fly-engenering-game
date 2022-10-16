@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Hello Veronica!
+=======
+Hello word!
+>>>>>>> parent of 9f93526 (hello world)
