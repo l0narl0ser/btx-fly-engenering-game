@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Hello Veronica!
+=======
+Hello World!
+>>>>>>> parent of 9e42feb (Update test.txt)
