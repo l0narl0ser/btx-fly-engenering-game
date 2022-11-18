@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnStartButtonClick()
     {
-        MessageSystem.Inctance.UIEvents.StartButtonClick();
+        Context.Inctance.GetMessageSystem().UIEvents.StartButtonClick();
         gameObject.SetActive(false);
     }
 }

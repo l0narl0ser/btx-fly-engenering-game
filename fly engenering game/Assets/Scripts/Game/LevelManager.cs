@@ -11,12 +11,17 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        MessageSystem.Inctance.UIEvents.OnStartButtonClickEvent += OnStartButtonClick;
+        Context.Inctance.GetMessageSystem().UIEvents.OnStartButtonClickEvent += OnStartButtonClick;
     }
 
     private void OnStartButtonClick()
     {
-        //онялнрперэ б янупюмемхъ х бшапюрэ хг яохяйю мсфмши спнбемэ!
-        GameObject.Instantiate(_levelObjects[0]);
+        //онялнрперэ б янупюмемхъ х бшапюрэ хг яохяйю мсфмши спнбемэ! SnapshotManager.GEtIndex()
+
+        int savedLevelIndex = Context.Inctance.GetSnapshotManager().GetLevelIndex();
+
+        GameObject prefab = _levelObjects[savedLevelIndex];
+        
+        GameObject.Instantiate(prefab, gameObject.transform);
     }
 }

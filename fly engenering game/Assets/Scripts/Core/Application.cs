@@ -1,3 +1,4 @@
+using Assets.Scripts.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,29 +12,34 @@ public class Application : MonoBehaviour
     {
         get
         {
-            if(_intstance != null)
+            if (_intstance != null)
             {
                 return _intstance;
 
             }
-           
+
             _intstance = FindObjectOfType<Application>();
+
             return _intstance;
         }
     }
 
-
+    private void Awake()
+    {
+        Context.Inctance.GetSnapshotManager().Load();
+    }
 
     public void Restart()
     {
         // 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);     
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Exit()
     {
 
         ///Cохранени
+        Context.Inctance.GetSnapshotManager().Save();
         UnityEngine.Application.Quit();
     }
 
