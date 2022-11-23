@@ -3,29 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Assets.Scripts.Core;
 
-public class PauseButton : MonoBehaviour
+public class InGameMenu : MonoBehaviour
 {
     [SerializeField]
     private Button _pauseButton;
 
-    [SerializeField]
-    private GameObject _menu;
 
-    void Start()
+
+    private void Start()
     {
         _pauseButton.onClick.AddListener(OnClickButton);
     }
     public void OnClickButton()
     {
-        Debug.Log("OnClickButton");
-        _menu.SetActive(true);
-        //Time.timeScale = 0;
+        Context.Inctance.GetMessageSystem().UIEvents.PauseButtonClickEvent();
+        Time.timeScale = 0;
     }
 
-
-    void Update()
-    {
-        
-    }
 }

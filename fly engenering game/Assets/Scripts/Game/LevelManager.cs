@@ -24,4 +24,10 @@ public class LevelManager : MonoBehaviour
         
         GameObject.Instantiate(prefab, gameObject.transform);
     }
+
+    private void OnDestroy()
+    {
+        Context.Inctance.GetMessageSystem().UIEvents.OnStartButtonClickEvent -= OnStartButtonClick;
+    }
+
 }
