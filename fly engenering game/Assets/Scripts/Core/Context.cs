@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace Assets.Scripts.Core
 {
-    public class Context
+    public class Context 
     {
         private static Context _intstance;
 
         private MessageSystem _messageSystem;
         private SnapshotManager _snapshotManager;
-
        
+      
         public Context()
         {
             _messageSystem = new MessageSystem();
