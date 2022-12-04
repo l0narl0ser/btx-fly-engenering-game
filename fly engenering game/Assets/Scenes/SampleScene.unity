@@ -745,6 +745,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 369483888}
     m_Modifications:
+    - target: {fileID: 1713454904396770009, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ef369fb688ea7a84285037aae0423d1f, type: 3}
+    - target: {fileID: 4762424356988925690, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 4762424355579057057}
     - target: {fileID: 4762424357164005787, guid: 98fe520006d17154c882232d793a4858, type: 3}
       propertyPath: m_Name
       value: MainMenu
@@ -797,5 +805,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 898.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 417.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.0997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398499616267872672, guid: 98fe520006d17154c882232d793a4858, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.754
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98fe520006d17154c882232d793a4858, type: 3}
+--- !u!114 &4762424355579057057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4762424356988925691, guid: 98fe520006d17154c882232d793a4858, type: 3}
+  m_PrefabInstance: {fileID: 4762424355579057056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
