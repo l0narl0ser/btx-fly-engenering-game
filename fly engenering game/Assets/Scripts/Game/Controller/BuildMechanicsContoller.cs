@@ -19,12 +19,21 @@ namespace Assets.Scripts.Game
         private void Awake()
         {
             _messageSystem = Context.Inctance.GetMessageSystem();
+            _messageSystem.LevelEvents.OnLevelStated += OnLevelStarted;
             _messageSystem.InputEvents.OnUserInput += OnUserInput; //падписка
 
+
         }
+
+        private void OnLevelStarted()
+        {
+            _accordancePortToGear.Clear();
+        }
+
         private void OnDestroy()
         {
             _messageSystem.InputEvents.OnUserInput -= OnUserInput; //атписка
+            _messageSystem.LevelEvents.OnLevelStated -= OnLevelStarted;
         }
 
         private void OnUserInput(Vector2 vector2)
@@ -61,6 +70,7 @@ namespace Assets.Scripts.Game
                 removingPort.Occupied = false;
                 _accordancePortToGear.Remove(selectedGearController);
                 _currentState = BuildStateMechanics.NONE;
+                _messageSystem.LevelEvents.ChanLevelState(_accordancePortToGear);
                 return;
             }
 
@@ -72,6 +82,7 @@ namespace Assets.Scripts.Game
                 _currentGearController.Inserted = true;
                 selectedPortController.Occupied = true;
                 _accordancePortToGear.Add(_currentGearController, selectedPortController);
+                _messageSystem.LevelEvents.ChanLevelState(_accordancePortToGear);
                 return;
             }
 
