@@ -388,7 +388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4762424357164005788}
   - component: {fileID: 6184568895329437888}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PauseDIalog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
