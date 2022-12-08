@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseButton: {fileID: 7628635032853905335}
+  _textTime: {fileID: 3369160366158172128}
 --- !u!1 &4996938560662386119
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +163,6 @@ GameObject:
   - component: {fileID: 1089059731429029012}
   - component: {fileID: 1190593339983347763}
   - component: {fileID: 3369160366158172128}
-  - component: {fileID: 89775077523162409}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -286,20 +286,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &89775077523162409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202692574567880131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd82f2c19ff4900498f9e66c68fe7ba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0
-  sec: 0.1
 --- !u!1 &7501760234989583864
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +377,6 @@ GameObject:
   - component: {fileID: 5772961082140577077}
   - component: {fileID: 2794925480937967189}
   - component: {fileID: 7628635032853905335}
-  - component: {fileID: 5590438463843208705}
   m_Layer: 5
   m_Name: dialogPause
   m_TagString: Untagged
@@ -501,16 +486,3 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5590438463843208705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8938568174720380548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fc2a43e7c8483e46a6fdd3b702ccc6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pauseButton: {fileID: 7628635032853905335}

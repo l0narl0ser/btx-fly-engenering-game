@@ -24,7 +24,7 @@ public class PauseDialog : MonoBehaviour
     {
         Context.Inctance.GetMessageSystem().UIEvents.ContinueButtonClickEvent();
         gameObject.SetActive(false);
-        Time.timeScale = 1;
+        
     }
 
     private void ExitGame()

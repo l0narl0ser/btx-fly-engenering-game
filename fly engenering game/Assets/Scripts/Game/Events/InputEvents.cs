@@ -13,6 +13,5 @@ namespace Assets.Scripts.Game
             OnUserInput?.Invoke(vector2);
         }
     }
-
     
 }
