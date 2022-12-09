@@ -495,10 +495,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseDIalog
       objectReference: {fileID: 0}
-    - target: {fileID: 4762424357164005787, guid: 57af72fcde0c34a42bbf40faef1b6c7b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4762424357164005788, guid: 57af72fcde0c34a42bbf40faef1b6c7b, type: 3}
       propertyPath: m_RootOrder
       value: 1
