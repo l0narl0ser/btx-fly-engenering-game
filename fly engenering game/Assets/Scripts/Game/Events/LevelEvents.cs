@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Game.Controller;
+using Assets.Scripts.Game.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +15,16 @@ namespace Assets.Scripts.Game.Events
 
         public event Action OnLevelStated;
 
-        public event Action OnLevelFinished;
+        public event Action<List<BalanceData>> OnLevelFinished;
 
         public void StartLevel()
         {
             OnLevelStated?.Invoke();
         }
 
-        public void FinishLevel()
+        public void FinishLevel(List<BalanceData> balanceDatas)
         {
-            OnLevelFinished?.Invoke();
+            OnLevelFinished?.Invoke(balanceDatas);
         }
 
         public void ChanLevelState(Dictionary<GearController, PortController> levelState)

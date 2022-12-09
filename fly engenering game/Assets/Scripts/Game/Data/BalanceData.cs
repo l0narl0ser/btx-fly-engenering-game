@@ -11,5 +11,6 @@ namespace Assets.Scripts.Game.Data
     {
         public int CountStars;
         public int Seconds;
+
     }
 }

@@ -11,6 +11,11 @@ public class SnapshotManager
     {
         _levelIndex = levlIndex;
     }
+    public void Reset()
+    {
+        _levelIndex = 0;
+        PlayerPrefs.DeleteAll();
+    }
 
     public int GetLevelIndex()
     {

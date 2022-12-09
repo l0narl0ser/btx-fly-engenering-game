@@ -1,4 +1,5 @@
 using Assets.Scripts.Core;
+using Assets.Scripts.Game.Data;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ public class LevelManager : MonoBehaviour
         _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;
     }
 
-    private void OnLevelFinished()
+    private void OnLevelFinished(List<BalanceData> balanceDatas)
     {
         NextLevel();
     }
@@ -32,7 +33,7 @@ public class LevelManager : MonoBehaviour
         savedLevelIndex++;
         _snapshotManager.SetLevelIndex(savedLevelIndex);
         _snapshotManager.Save();
-        LoadLevelByIndex(savedLevelIndex);
+  
     }
 
     private void OnStartButtonClick()
