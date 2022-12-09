@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3709031578105576538, guid: e8071365a666654418bb4b5df64a235c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8493738862758600686, guid: e8071365a666654418bb4b5df64a235c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -490,6 +494,10 @@ PrefabInstance:
     - target: {fileID: 4762424357164005787, guid: 57af72fcde0c34a42bbf40faef1b6c7b, type: 3}
       propertyPath: m_Name
       value: PauseDIalog
+      objectReference: {fileID: 0}
+    - target: {fileID: 4762424357164005787, guid: 57af72fcde0c34a42bbf40faef1b6c7b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4762424357164005788, guid: 57af72fcde0c34a42bbf40faef1b6c7b, type: 3}
       propertyPath: m_RootOrder
