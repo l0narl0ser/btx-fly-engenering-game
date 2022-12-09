@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3467004532428165142}
   - component: {fileID: 2792954842774775261}
-  - component: {fileID: 634648414361490264}
   m_Layer: 0
   m_Name: Level2
   m_TagString: Untagged
@@ -64,25 +63,13 @@ MonoBehaviour:
     GearController: {fileID: 2718118119902704596}
   - PortController: {fileID: 5222829338015355123}
     GearController: {fileID: 611146349878744142}
---- !u!114 &634648414361490264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503586077294660896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6826ea2749b01fc48914d7ca753fcc05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _levelBalance:
   - CountStars: 3
-    Seconds: 15
+    Seconds: 10
   - CountStars: 2
-    Seconds: 45
-  - CountStars: 3
-    Seconds: 1000
+    Seconds: 15
+  - CountStars: 1
+    Seconds: 20
 --- !u!1001 &151235890371954441
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ namespace Assets.Scripts.Game.Controller
         [SerializeField]
         private List<PortToGearAccordance> _portToGearAccordances = new List<PortToGearAccordance>();
 
+        [SerializeField]
+        private List<Data.BalanceData> _levelBalance;
+
         [Serializable]
         private class PortToGearAccordance
         {
@@ -52,7 +55,7 @@ namespace Assets.Scripts.Game.Controller
 
 
             Debug.Log("You are wone");
-            _messageSystem.LevelEvents.FinishLevel();
+            _messageSystem.LevelEvents.FinishLevel(_levelBalance);
             Destroy(gameObject);
         }
     }
