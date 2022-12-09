@@ -28,10 +28,13 @@ public class UiManager : MonoBehaviour
         _messageSystem.UIEvents.OnStartButtonClickEvent += OnGameplayStart;
         _messageSystem.UIEvents.OnPauseButtonClickEvent += OnPauseButtonClick;
         _messageSystem.UIEvents.OnContinueButtonClickEvent += OnContinueButtonClick;
-        _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;
+        _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;    
 
+    }
+
+    private void Start()
+    {
         ConfigureStartView();
-
     }
 
     private void ConfigureStartView()
