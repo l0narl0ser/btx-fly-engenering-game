@@ -20,6 +20,9 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private WinDialog _winDialog;
 
+    [SerializeField]
+    private FinishGameDialog _finishGameDialog;
+
     private MessageSystem _messageSystem;
 
     private void Awake()
@@ -28,7 +31,8 @@ public class UiManager : MonoBehaviour
         _messageSystem.UIEvents.OnStartButtonClickEvent += OnGameplayStart;
         _messageSystem.UIEvents.OnPauseButtonClickEvent += OnPauseButtonClick;
         _messageSystem.UIEvents.OnContinueButtonClickEvent += OnContinueButtonClick;
-        _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;    
+        _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;
+        _messageSystem.LevelEvents.OnLastLevelReached += OnLastLevelReached;
 
     }
 
@@ -42,6 +46,7 @@ public class UiManager : MonoBehaviour
         _inGameMenu.gameObject.SetActive(false);
         _pauseDialog.gameObject.SetActive(false);
         _winDialog.gameObject.SetActive(false);
+        _finishGameDialog.gameObject.SetActive(false);
     }
 
     private void OnDestroy()
@@ -50,8 +55,17 @@ public class UiManager : MonoBehaviour
         _messageSystem.UIEvents.OnPauseButtonClickEvent -= OnPauseButtonClick;
         _messageSystem.UIEvents.OnContinueButtonClickEvent -= OnContinueButtonClick;
         _messageSystem.LevelEvents.OnLevelFinished -= OnLevelFinished;
+        _messageSystem.LevelEvents.OnLastLevelReached += OnLastLevelReached;
 
     }
+
+    private void OnLastLevelReached()
+    {
+        _inGameMenu.gameObject.SetActive(false);
+        _winDialog.gameObject.SetActive(false);
+        _finishGameDialog.gameObject.SetActive(true);
+    }
+
     private void OnLevelFinished(List<BalanceData> balanceDatas)
     {
         _inGameMenu.gameObject.SetActive(false);
@@ -61,6 +75,7 @@ public class UiManager : MonoBehaviour
     {
         _mainMenu.gameObject.SetActive(false);
         _winDialog.gameObject.SetActive(false);
+        _finishGameDialog.gameObject.SetActive(false);
         _inGameMenu.gameObject.SetActive(true);
     }
 

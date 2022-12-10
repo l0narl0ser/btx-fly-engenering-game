@@ -15,6 +15,8 @@ namespace Assets.Scripts.Game.Events
 
         public event Action OnLevelStated;
 
+        public event Action OnLastLevelReached;
+
         public event Action<List<BalanceData>> OnLevelFinished;
 
         public void StartLevel()
@@ -32,5 +34,10 @@ namespace Assets.Scripts.Game.Events
             OnChangeLevelState?.Invoke(levelState);
             
         }
+        public void LastLevelReached()
+        {
+            OnLastLevelReached?.Invoke();
+        }
+
     }
 }

@@ -42,17 +42,24 @@ public class LevelManager : MonoBehaviour
 
         int savedLevelIndex = _snapshotManager.GetLevelIndex();
 
-        LoadLevelByIndex(savedLevelIndex);
+        TryLoadByIndex(savedLevelIndex);
 
     }
 
 
-    public void LoadLevelByIndex(int levelIndex)
+    public void TryLoadByIndex(int levelIndex)
     {
-        GameObject prefab = _levelObjects[levelIndex];
-
-        GameObject.Instantiate(prefab, gameObject.transform);
-        _messageSystem.LevelEvents.StartLevel();
+        if (_levelObjects.Count - 1 > levelIndex)
+        {
+            GameObject prefab = _levelObjects[levelIndex];
+            GameObject.Instantiate(prefab, gameObject.transform);
+            _messageSystem.LevelEvents.StartLevel();
+        }
+        else
+        {
+            _messageSystem.LevelEvents.LastLevelReached();
+        }
+           
     }
 
 
