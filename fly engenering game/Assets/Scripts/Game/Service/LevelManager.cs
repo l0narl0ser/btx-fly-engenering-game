@@ -16,8 +16,8 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        _messageSystem = Context.Inctance.GetMessageSystem();
-        _snapshotManager = Context.Inctance.GetSnapshotManager();
+        _messageSystem = Context.Instance.GetMessageSystem();
+        _snapshotManager = Context.Instance.GetSnapshotManager();
         _messageSystem.UIEvents.OnStartButtonClickEvent += OnStartButtonClick;
         _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;
     }
@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
 
     private void OnStartButtonClick()
     {
-        //œŒ—ÃŒ“–≈“‹ ¬ —Œ’–¿Õ≈Õ»ﬂ » ¬€¡–¿“‹ »« —œ»— ¿ Õ”∆Õ€… ”–Œ¬≈Õ‹! SnapshotManager.GEtIndex()
+        //–ü–û–°–ú–û–¢–†–ï–¢–¨ –í –°–û–•–†–ê–ù–ï–ù–ò–Ø –ò –í–´–ë–†–ê–¢–¨ –ò–ó –°–ü–ò–°–ö–ê –ù–£–ñ–ù–´–ô –£–†–û–í–ï–ù–¨! SnapshotManager.GEtIndex()
 
         int savedLevelIndex = _snapshotManager.GetLevelIndex();
 

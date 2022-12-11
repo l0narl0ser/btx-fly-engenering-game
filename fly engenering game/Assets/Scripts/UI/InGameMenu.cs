@@ -20,7 +20,7 @@ public class InGameMenu : MonoBehaviour
     private void Start()
     {
         _pauseButton.onClick.AddListener(OnClickButton);
-        _timeService = Context.Inctance.GetTimeService();
+        _timeService = Context.Instance.GetTimeService();
         
     }
 
@@ -36,7 +36,7 @@ public class InGameMenu : MonoBehaviour
     }
     public void OnClickButton()
     {
-        Context.Inctance.GetMessageSystem().UIEvents.PauseButtonClickEvent();        
+        Context.Instance.GetMessageSystem().UIEvents.PauseButtonClickEvent();        
     }
 
 }

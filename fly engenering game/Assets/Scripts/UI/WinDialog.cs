@@ -21,8 +21,8 @@ namespace Assets.Scripts.UI
 
         private void Awake()
         {
-            _messageSystem = Context.Inctance.GetMessageSystem();
-            _timeService = Context.Inctance.GetTimeService();
+            _messageSystem = Context.Instance.GetMessageSystem();
+            _timeService = Context.Instance.GetTimeService();
             _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;
             _contunueButton.onClick.AddListener(OnClickContinueButton);
 

@@ -22,18 +22,18 @@ public class PauseDialog : MonoBehaviour
     }
     private void ContinueGame()
     {
-        Context.Inctance.GetMessageSystem().UIEvents.ContinueButtonClickEvent();
+        Context.Instance.GetMessageSystem().UIEvents.ContinueButtonClickEvent();
         gameObject.SetActive(false);
         
     }
 
     private void ExitGame()
     {
-        Application.Inctance.Exit();
+        Application.Instance.Exit();
     }
 
     private void RestartLevel()
     {
-        Application.Inctance.Restart();
+        Application.Instance.Restart();
     }
 }

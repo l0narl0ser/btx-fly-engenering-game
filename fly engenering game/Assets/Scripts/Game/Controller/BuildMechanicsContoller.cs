@@ -18,7 +18,7 @@ namespace Assets.Scripts.Game
 
         private void Awake()
         {
-            _messageSystem = Context.Inctance.GetMessageSystem();
+            _messageSystem = Context.Instance.GetMessageSystem();
             _messageSystem.LevelEvents.OnLevelStated += OnLevelStarted;
             _messageSystem.InputEvents.OnUserInput += OnUserInput; //падписка
 

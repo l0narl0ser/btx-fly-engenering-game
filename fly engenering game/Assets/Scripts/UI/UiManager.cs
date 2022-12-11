@@ -27,7 +27,7 @@ public class UiManager : MonoBehaviour
 
     private void Awake()
     {
-        _messageSystem = Context.Inctance.GetMessageSystem();
+        _messageSystem = Context.Instance.GetMessageSystem();
         _messageSystem.UIEvents.OnStartButtonClickEvent += OnGameplayStart;
         _messageSystem.UIEvents.OnPauseButtonClickEvent += OnPauseButtonClick;
         _messageSystem.UIEvents.OnContinueButtonClickEvent += OnContinueButtonClick;
@@ -55,7 +55,7 @@ public class UiManager : MonoBehaviour
         _messageSystem.UIEvents.OnPauseButtonClickEvent -= OnPauseButtonClick;
         _messageSystem.UIEvents.OnContinueButtonClickEvent -= OnContinueButtonClick;
         _messageSystem.LevelEvents.OnLevelFinished -= OnLevelFinished;
-        _messageSystem.LevelEvents.OnLastLevelReached += OnLastLevelReached;
+        _messageSystem.LevelEvents.OnLastLevelReached -= OnLastLevelReached;
 
     }
 

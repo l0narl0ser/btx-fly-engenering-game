@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-        _snapchotManager = Context.Inctance.GetSnapshotManager(); 
+        _snapchotManager = Context.Instance.GetSnapshotManager(); 
         _startButton.onClick.AddListener(OnStartButtonClick);
         _restartButton.onClick.AddListener(OnRestartButtonClick);
         _exitButton.onClick.AddListener(OnExitButtonClick);
@@ -29,18 +29,18 @@ public class MainMenu : MonoBehaviour
 
     private void OnExitButtonClick()
     {
-        Application.Inctance.Exit();
+        Application.Instance.Exit();
     }
 
     private void OnRestartButtonClick()
     {
         _snapchotManager.Reset();
-        Context.Inctance.GetMessageSystem().UIEvents.StartButtonClick();
+        Context.Instance.GetMessageSystem().UIEvents.StartButtonClick();
     }
 
     private void OnStartButtonClick()
     {
-        Context.Inctance.GetMessageSystem().UIEvents.StartButtonClick();
+        Context.Instance.GetMessageSystem().UIEvents.StartButtonClick();
         gameObject.SetActive(false);
     }
 }
