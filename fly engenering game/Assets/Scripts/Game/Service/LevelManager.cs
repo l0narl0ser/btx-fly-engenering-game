@@ -44,7 +44,7 @@ public class LevelManager : MonoBehaviour
 
     public void TryLoadByIndex(int levelIndex)
     {
-        if (_levelObjects.Count - 1 > levelIndex)
+        if (_levelObjects.Count - 1 >= levelIndex)
         {
             GameObject prefab = _levelObjects[levelIndex];
             Instantiate(prefab, gameObject.transform);

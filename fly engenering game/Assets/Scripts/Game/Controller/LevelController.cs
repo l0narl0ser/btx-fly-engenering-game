@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Core;
 using Assets.Scripts.Game.Data;
@@ -18,6 +19,8 @@ namespace Assets.Scripts.Game.Controller
             [SerializeField] public PortController PortController;
             [SerializeField] public GearController GearController;
         }
+
+        [SerializeField] private float _delayBeforeNewLevel = 0.5f;
 
         private MessageSystem _messageSystem;
 
@@ -60,7 +63,20 @@ namespace Assets.Scripts.Game.Controller
                 return;
             }
             
-            Debug.Log("You are wone");
+            PrepareStartNewLevel();
+        }
+
+        private void PrepareStartNewLevel()
+        {
+#if UNITY_EDITOR
+            Debug.Log("You are wine");
+#endif
+            StartCoroutine(StartTimerCoroutine());
+        }
+
+        private IEnumerator StartTimerCoroutine()
+        {
+            yield return new WaitForSeconds(_delayBeforeNewLevel);
             _messageSystem.LevelEvents.FinishLevel(_levelBalance);
             Destroy(gameObject);
         }
