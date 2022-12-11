@@ -1,6 +1,4 @@
 ﻿using Assets.Scripts.Game.Service;
-using System.Collections;
-using UnityEngine;
 
 namespace Assets.Scripts.Core
 {
@@ -29,10 +27,12 @@ namespace Assets.Scripts.Core
                 {
                     return _intstance;
                 }
+
                 _intstance = new Context();
                 return _intstance;
             }
         }
+
         public MessageSystem GetMessageSystem()
         {
             return _messageSystem;

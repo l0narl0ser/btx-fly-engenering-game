@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using Assets.Scripts.Core;
 using Assets.Scripts.Game.Service;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameMenu : MonoBehaviour
 {
     private const float UpdateTimer = 1f;
-    [SerializeField]
-    private Button _pauseButton;
-    [SerializeField]
-    private TextMeshProUGUI _textTime;
+    [SerializeField] private Button _pauseButton;
+    [SerializeField] private TextMeshProUGUI _textTime;
 
     private TimeService _timeService;
     private float elipsedTime;
@@ -21,7 +17,6 @@ public class InGameMenu : MonoBehaviour
     {
         _pauseButton.onClick.AddListener(OnClickButton);
         _timeService = Context.Instance.GetTimeService();
-        
     }
 
     private void Update()
@@ -34,9 +29,9 @@ public class InGameMenu : MonoBehaviour
             _textTime.text = timeInLevel.ToString();
         }
     }
+
     public void OnClickButton()
     {
-        Context.Instance.GetMessageSystem().UIEvents.PauseButtonClickEvent();        
+        Context.Instance.GetMessageSystem().UIEvents.PauseButtonClickEvent();
     }
-
 }

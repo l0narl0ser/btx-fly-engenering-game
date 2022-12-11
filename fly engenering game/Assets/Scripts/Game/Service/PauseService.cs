@@ -1,9 +1,5 @@
-﻿using Assets.Scripts.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using Assets.Scripts.Core;
 using UnityEngine;
 
 namespace Assets.Scripts.Game.Service
@@ -30,7 +26,7 @@ namespace Assets.Scripts.Game.Service
 
         private void OnContrinueButtonClick()
         {
-            Time.timeScale = 1;           
+            Time.timeScale = 1;
             _timeInPause = _timeInPause + (Time.realtimeSinceStartup - _timeStartPause);
         }
 
