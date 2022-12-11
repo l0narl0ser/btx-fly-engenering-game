@@ -63,9 +63,9 @@ MonoBehaviour:
   - CountStars: 3
     Seconds: 10
   - CountStars: 2
-    Seconds: 20
-  - CountStars: 1
     Seconds: 15
+  - CountStars: 1
+    Seconds: 20
   _delayBeforeNewLevel: 0.7
 --- !u!1001 &15051831081238895
 PrefabInstance:
