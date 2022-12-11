@@ -8,10 +8,10 @@ namespace Assets.Scripts.Core
     {
         private static Context _intstance;
 
-        private MessageSystem _messageSystem;
-        private SnapshotManager _snapshotManager;
-        private PauseService _pauseService;
-        private TimeService _timeService;
+        private readonly MessageSystem _messageSystem;
+        private readonly SnapshotManager _snapshotManager;
+        private readonly PauseService _pauseService;
+        private readonly TimeService _timeService;
 
         public Context()
         {
@@ -21,7 +21,7 @@ namespace Assets.Scripts.Core
             _timeService = new TimeService(_pauseService, _messageSystem);
         }
 
-        public static Context Inctance
+        public static Context Instance
         {
             get
             {

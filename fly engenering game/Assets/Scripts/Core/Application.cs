@@ -8,7 +8,7 @@ public class Application : MonoBehaviour
 {
     private static Application _intstance;
 
-    public static Application Inctance
+    public static Application Instance
     {
         get
         {
@@ -26,7 +26,7 @@ public class Application : MonoBehaviour
 
     private void Awake()
     {
-        Context.Inctance.GetSnapshotManager().Load();
+        Context.Instance.GetSnapshotManager().Load();
     }
 
     public void Restart()
@@ -39,7 +39,7 @@ public class Application : MonoBehaviour
     {
 
         ///Cохранени
-        Context.Inctance.GetSnapshotManager().Save();
+        Context.Instance.GetSnapshotManager().Save();
         UnityEngine.Application.Quit();
     }
 

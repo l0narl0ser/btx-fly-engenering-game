@@ -19,8 +19,8 @@ namespace Assets.Scripts.UI
 
         private void Awake()
         {
-            _snapshotManager = Context.Inctance.GetSnapshotManager();
-            _messageSystem = Context.Inctance.GetMessageSystem();
+            _snapshotManager = Context.Instance.GetSnapshotManager();
+            _messageSystem = Context.Instance.GetMessageSystem();
             _exitButton.onClick.AddListener(OnClickExitButton);
             _startNewGameButton.onClick.AddListener(OnClickStartNewGameButton);
         }
@@ -28,12 +28,12 @@ namespace Assets.Scripts.UI
         private void OnClickStartNewGameButton()
         {
             _snapshotManager.Reset();
-            Context.Inctance.GetMessageSystem().UIEvents.StartButtonClick();
+            Context.Instance.GetMessageSystem().UIEvents.StartButtonClick();
         }
 
         private void OnClickExitButton()
         {
-            Application.Inctance.Exit();
+            Application.Instance.Exit();
         }
     }
 

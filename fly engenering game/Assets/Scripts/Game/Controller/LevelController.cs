@@ -28,7 +28,7 @@ namespace Assets.Scripts.Game.Controller
 
         private void Awake()
         {
-            _messageSystem = Context.Inctance.GetMessageSystem();
+            _messageSystem = Context.Instance.GetMessageSystem();
             _messageSystem.LevelEvents.OnChangeLevelState += OnChangeLevelState;
         }
 
