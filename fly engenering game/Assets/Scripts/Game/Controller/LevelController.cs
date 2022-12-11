@@ -1,27 +1,22 @@
-﻿using Assets.Scripts.Core;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using Assets.Scripts.Core;
+using Assets.Scripts.Game.Data;
 using UnityEngine;
 
 namespace Assets.Scripts.Game.Controller
 {
-
     public class LevelController : MonoBehaviour
     {
-        [SerializeField]
-        private List<PortToGearAccordance> _portToGearAccordances = new List<PortToGearAccordance>();
+        [SerializeField] private List<PortToGearAccordance> _portToGearAccordances = new List<PortToGearAccordance>();
 
-        [SerializeField]
-        private List<Data.BalanceData> _levelBalance;
+        [SerializeField] private List<BalanceData> _levelBalance;
 
         [Serializable]
         private class PortToGearAccordance
         {
-            [SerializeField]
-            public PortController PortController;
-            [SerializeField]
-            public GearController GearController;
+            [SerializeField] public PortController PortController;
+            [SerializeField] public GearController GearController;
         }
 
         private MessageSystem _messageSystem;
@@ -43,6 +38,7 @@ namespace Assets.Scripts.Game.Controller
             {
                 return;
             }
+
             foreach (PortToGearAccordance item in _portToGearAccordances)
             {
                 PortController selectePortController = portToGearAccordance[item.GearController];

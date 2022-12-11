@@ -1,6 +1,4 @@
 ﻿using Assets.Scripts.Core;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +6,9 @@ namespace Assets.Scripts.UI
 {
     public class FinishGameDialog : MonoBehaviour
     {
-        [SerializeField]
-        private Button _exitButton;
+        [SerializeField] private Button _exitButton;
 
-        [SerializeField]
-        private Button _startNewGameButton;
+        [SerializeField] private Button _startNewGameButton;
 
         private MessageSystem _messageSystem;
         private SnapshotManager _snapshotManager;
@@ -36,5 +32,4 @@ namespace Assets.Scripts.UI
             Application.Instance.Exit();
         }
     }
-
 }

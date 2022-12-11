@@ -1,32 +1,22 @@
-﻿using Assets.Scripts.Game.Controller;
-using System;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Game
 {
-    public class GearController : MonoBehaviour, IGameController
+    public class GearController : MonoBehaviour
     {
-        [SerializeField]
-        private string _id;
-
         //private _inserted;
 
         public Vector2 _initedPosition;
 
         //Свойство
-        public bool Inserted  { get; set; }
+        public bool Inserted { get; set; }
 
         private void Awake()
         {
             _initedPosition = transform.position;
         }
-        public string GetId()
-        {
-            return _id;
-        }
 
-        public void ReturnToInitPostion()
+        public void ReturnToInitPosition()
         {
             transform.position = _initedPosition;
             Inserted = false;

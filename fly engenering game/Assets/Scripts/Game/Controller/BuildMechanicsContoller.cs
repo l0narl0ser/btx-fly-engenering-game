@@ -1,28 +1,27 @@
-﻿using Assets.Scripts.Core;
+﻿using System.Collections.Generic;
+using Assets.Scripts.Core;
 using Assets.Scripts.Game.Controller;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Game
 {
-    public class BuildMechanicsContoller : MonoBehaviour 
+    public class BuildMechanicsContoller : MonoBehaviour
     {
         private MessageSystem _messageSystem;
         private BuildStateMechanics _currentState;
         private GearController _currentGearController;
 
-        private Dictionary<GearController, PortController> _accordancePortToGear = new Dictionary<GearController, PortController>();
+        private Dictionary<GearController, PortController> _accordancePortToGear =
+            new Dictionary<GearController, PortController>();
 
+        private Camera _mainCamera;
 
         private void Awake()
         {
             _messageSystem = Context.Instance.GetMessageSystem();
             _messageSystem.LevelEvents.OnLevelStated += OnLevelStarted;
             _messageSystem.InputEvents.OnUserInput += OnUserInput; //падписка
-
-
+            _mainCamera = Camera.main;
         }
 
         private void OnLevelStarted()
@@ -38,8 +37,7 @@ namespace Assets.Scripts.Game
 
         private void OnUserInput(Vector2 vector2)
         {
-
-            Vector3 postionRaycecast = Camera.main.ScreenToWorldPoint(vector2);
+            Vector3 postionRaycecast = _mainCamera.ScreenToWorldPoint(vector2);
             RaycastHit2D hit = Physics2D.Raycast(postionRaycecast, Vector2.zero);
             if (hit.collider != null)
             {
@@ -53,7 +51,7 @@ namespace Assets.Scripts.Game
             GearController selectedGearController = gameObject.GetComponent<GearController>();
             BuildStateMechanics newState = BuildStateMechanics.NONE;
 
-            if(selectedPortController != null)
+            if (selectedPortController != null)
             {
                 newState = BuildStateMechanics.SELECT_PORT;
             }
@@ -65,7 +63,7 @@ namespace Assets.Scripts.Game
 
             if (newState == BuildStateMechanics.SELECT_GEAR && selectedGearController.Inserted)
             {
-                selectedGearController.ReturnToInitPostion();
+                selectedGearController.ReturnToInitPosition();
                 PortController removingPort = _accordancePortToGear[selectedGearController];
                 removingPort.Occupied = false;
                 _accordancePortToGear.Remove(selectedGearController);
@@ -74,7 +72,7 @@ namespace Assets.Scripts.Game
                 return;
             }
 
-            if(_currentState == BuildStateMechanics.SELECT_GEAR && newState == BuildStateMechanics.SELECT_PORT)
+            if (_currentState == BuildStateMechanics.SELECT_GEAR && newState == BuildStateMechanics.SELECT_PORT)
             {
                 //TODO:Перенести шестеренку на порт
                 _currentState = BuildStateMechanics.NONE;
@@ -86,7 +84,7 @@ namespace Assets.Scripts.Game
                 return;
             }
 
-            if(_currentState == BuildStateMechanics.NONE && newState == BuildStateMechanics.SELECT_GEAR)
+            if (_currentState == BuildStateMechanics.NONE && newState == BuildStateMechanics.SELECT_GEAR)
             {
                 _currentState = newState;
                 //TODO:: СДелать выбранную шестренку больше или изменить цвет цветом
@@ -94,7 +92,6 @@ namespace Assets.Scripts.Game
             }
 
             //вернуть шестеренку назад
-
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿using Assets.Scripts.Core;
-using System;
+﻿using System;
+using Assets.Scripts.Core;
 using UnityEngine;
 
 namespace Assets.Scripts.Game.Service
@@ -8,7 +8,7 @@ namespace Assets.Scripts.Game.Service
     {
         private MessageSystem _messageSystem;
         private PauseService _pauseService;
-        
+
         private float _timeLevelStart;
 
         public TimeService(PauseService pauseService, MessageSystem messageSystem)
@@ -16,7 +16,6 @@ namespace Assets.Scripts.Game.Service
             _pauseService = pauseService;
             _messageSystem = messageSystem;
             _messageSystem.LevelEvents.OnLevelStated += OnLevelStarted;
-           
         }
 
         public void Dispose()

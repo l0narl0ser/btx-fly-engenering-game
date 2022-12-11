@@ -1,6 +1,4 @@
 using Assets.Scripts.Core;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +13,6 @@ public class Application : MonoBehaviour
             if (_intstance != null)
             {
                 return _intstance;
-
             }
 
             _intstance = FindObjectOfType<Application>();
@@ -37,10 +34,8 @@ public class Application : MonoBehaviour
 
     public void Exit()
     {
-
         ///Cохранени
         Context.Instance.GetSnapshotManager().Save();
         UnityEngine.Application.Quit();
     }
-
 }

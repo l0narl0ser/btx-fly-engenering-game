@@ -1,16 +1,12 @@
-﻿using Assets.Scripts.Game.Controller;
-using Assets.Scripts.Game.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Assets.Scripts.Game.Controller;
+using Assets.Scripts.Game.Data;
 
 namespace Assets.Scripts.Game.Events
 {
-
-    public class LevelEvents { 
-  
+    public class LevelEvents
+    {
         public event Action<Dictionary<GearController, PortController>> OnChangeLevelState;
 
         public event Action OnLevelStated;
@@ -32,12 +28,11 @@ namespace Assets.Scripts.Game.Events
         public void ChanLevelState(Dictionary<GearController, PortController> levelState)
         {
             OnChangeLevelState?.Invoke(levelState);
-            
         }
+
         public void LastLevelReached()
         {
             OnLastLevelReached?.Invoke();
         }
-
     }
 }

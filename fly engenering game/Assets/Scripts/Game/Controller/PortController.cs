@@ -1,23 +1,16 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Game.Controller
 {
-    public class PortController : MonoBehaviour, IGameController
+    public class PortController : MonoBehaviour
     {
-        [SerializeField]
-        private string _id;
-        [SerializeField]
-        private Collider2D _portCollider;
+        [SerializeField] private Collider2D _portCollider;
 
         private bool _occupied;
 
         public bool Occupied
         {
-            get
-            {
-                return _occupied;
-            }
+            get => _occupied;
             set
             {
                 //if(value == true)
@@ -34,10 +27,5 @@ namespace Assets.Scripts.Game.Controller
                 _portCollider.enabled = !value;
             }
         }
-        public string GetId()
-        {
-            return _id;
-        }
-
     }
 }

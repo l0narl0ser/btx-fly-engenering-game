@@ -1,27 +1,20 @@
+using System.Collections.Generic;
 using Assets.Scripts.Core;
 using Assets.Scripts.Game.Data;
 using Assets.Scripts.UI;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
-    [SerializeField]
-    private MainMenu _mainMenu;
+    [SerializeField] private MainMenu _mainMenu;
 
-    [SerializeField]
-    private InGameMenu _inGameMenu;
+    [SerializeField] private InGameMenu _inGameMenu;
 
-    [SerializeField]
-    private PauseDialog _pauseDialog;
+    [SerializeField] private PauseDialog _pauseDialog;
 
-    [SerializeField]
-    private WinDialog _winDialog;
+    [SerializeField] private WinDialog _winDialog;
 
-    [SerializeField]
-    private FinishGameDialog _finishGameDialog;
+    [SerializeField] private FinishGameDialog _finishGameDialog;
 
     private MessageSystem _messageSystem;
 
@@ -33,7 +26,6 @@ public class UiManager : MonoBehaviour
         _messageSystem.UIEvents.OnContinueButtonClickEvent += OnContinueButtonClick;
         _messageSystem.LevelEvents.OnLevelFinished += OnLevelFinished;
         _messageSystem.LevelEvents.OnLastLevelReached += OnLastLevelReached;
-
     }
 
     private void Start()
@@ -56,7 +48,6 @@ public class UiManager : MonoBehaviour
         _messageSystem.UIEvents.OnContinueButtonClickEvent -= OnContinueButtonClick;
         _messageSystem.LevelEvents.OnLevelFinished -= OnLevelFinished;
         _messageSystem.LevelEvents.OnLastLevelReached -= OnLastLevelReached;
-
     }
 
     private void OnLastLevelReached()
@@ -71,6 +62,7 @@ public class UiManager : MonoBehaviour
         _inGameMenu.gameObject.SetActive(false);
         _winDialog.gameObject.SetActive(true);
     }
+
     private void OnGameplayStart()
     {
         _mainMenu.gameObject.SetActive(false);

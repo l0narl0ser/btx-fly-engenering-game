@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SnapshotManager
@@ -11,6 +9,7 @@ public class SnapshotManager
     {
         _levelIndex = levlIndex;
     }
+
     public void Reset()
     {
         _levelIndex = 0;
@@ -21,6 +20,7 @@ public class SnapshotManager
     {
         return _levelIndex;
     }
+
     public void Save()
     {
         PlayerPrefs.SetInt(LevelIndexKey, _levelIndex);

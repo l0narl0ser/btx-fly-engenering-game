@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Scripts.Game.Data
 {
@@ -11,6 +7,5 @@ namespace Assets.Scripts.Game.Data
     {
         public int CountStars;
         public int Seconds;
-
     }
 }

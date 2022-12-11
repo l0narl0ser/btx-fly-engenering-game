@@ -29,7 +29,5 @@ namespace Assets.Scripts.UI.Event
         {
             OnPauseButtonClickEvent?.Invoke();
         }
-
-
     }
 }
