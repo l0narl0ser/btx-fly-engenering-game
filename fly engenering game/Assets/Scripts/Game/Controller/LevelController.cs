@@ -34,22 +34,32 @@ namespace Assets.Scripts.Game.Controller
 
         private void OnChangeLevelState(Dictionary<GearController, PortController> portToGearAccordance)
         {
-            if (portToGearAccordance.Count != _portToGearAccordances.Count)
-            {
-                return;
-            }
 
+            bool loseCombination = false;
             foreach (PortToGearAccordance item in _portToGearAccordances)
             {
-                PortController selectePortController = portToGearAccordance[item.GearController];
-
-                if (selectePortController != item.PortController)
+                if (!portToGearAccordance.ContainsKey(item.GearController))
                 {
-                    return;
+                    loseCombination = true;
+                    continue;
+                }
+                PortController selectedPortController = portToGearAccordance[item.GearController];
+
+                if (selectedPortController != item.PortController)
+                {
+                    loseCombination = true;
+                }
+                else
+                {
+                    item.GearController.StartRotationAnimation();
                 }
             }
 
-
+            if (loseCombination)
+            {
+                return;
+            }
+            
             Debug.Log("You are wone");
             _messageSystem.LevelEvents.FinishLevel(_levelBalance);
             Destroy(gameObject);
